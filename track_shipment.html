@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/track_shipment.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <img src='images/royal-logo.png' id='logo'>
+    </header>
+    <div>
+      <input type='text' placeholder='Booking Number' id='booking_no'>
+    </div>
+    <div id="search_result">
+      <img src='images/map.png' id='tracking_image'>
+      <div id="tracking_info">
+        <div id="tracking_details">
+          <div class='location_status' id="start">
+            <div class='location_title'>Origin</div>
+            <div class='location'>
+            </div>
+          </div>
+          <div class='location_status' id="current">
+            <div class='location_title'>Current Location</div>
+            <div class='location'>
+            </div>
+          </div>
+          <div class='location_status' id="finish">
+            <div class='location_title'>Destination</div>
+            <div class='location'>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id='booking_details'>
+        Booking Number: <span class="your_booking" id='booking'></span><br>
+        Order Status: <span class="your_booking" id='status'></span><br>
+        Estimated Arrival: <span class="your_booking" id='eta'></span>
+      </div>
+      <svg id="delivery_progress" width="800" height="100">
+        <line x1="100" y1="70" x2="300" y2="70" class="incomplete" stage=2 />
+        <line x1="300" y1="70" x2="500" y2="70" class="incomplete" stage=3 />
+        <line x1="500" y1="70" x2="700" y2="70" class="incomplete" stage=4 />
+        <circle cx="100" cy="70" r="10" class="incomplete" stage=1 />
+        <circle cx="300" cy="70" r="10" class="incomplete" stage=2 />
+        <circle cx="500" cy="70" r="10" class="incomplete" stage=3 />
+        <circle cx="700" cy="70" r="10" class="incomplete" stage=4 />
+        <text x="100" y="20" text-anchor="middle" alignment-baseline="central">Order Accepted</text>
+        <text x="300" y="20" text-anchor="middle" alignment-baseline="central">Preparing Shipping</text>
+        <text x="500" y="20" text-anchor="middle" alignment-baseline="central">Out For Delivery</text>
+        <text x="700" y="20" text-anchor="middle" alignment-baseline="central">Delivered</text>
+      </svg><br>
+      <div class='boxes'>
+        <div class='shipping_details'>
+          <span class='sub_heading'>Customer Details</span>
+        </div>
+        <div class='car_infos'>
+          <div class='car_info'>Name: </div><br>
+          <div class='car_info'>Phone: </div><br>
+          <div class='car_info'>Email: </div>
+        </div>
+      </div>
+      <div class='boxes'>
+        <div class='shipping_details'>
+          <span class='sub_heading'>Car Details</span>
+        </div>
+        <div class='car_infos'>
+          <div class='car_info'>Car Make: </div><br>
+          <div class='car_info'>Model: </div><br>
+          <div class='car_info'>Year of Maufacture: </div>
+        </div>
+      </div>
+    </div>
+    <div id='footer'>
+      <div class='footer_item selected_item'>
+        <div class='footer_item_content'>
+          <img src='images/trackingiconwhite.png' class='footer_image'>
+          <div class='footer_text'>TRACK</div>
+        </div>
+      </div>
+      <div class='footer_item'>
+        <div class='footer_item_content'>
+          <img src='images/requestquote.png' class='footer_image'>
+          <div class='footer_text'>REQUEST</div>
+        </div>
+      </div>
+      <div class='footer_item'>
+        <div class='footer_item_content'>
+          <img src='images/contact.jpg' class='footer_image'>
+          <div class='footer_text'>CONTACT</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

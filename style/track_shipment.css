@@ -1,0 +1,286 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  font-family: 'Lato', sans-serif;
+}
+#logo {
+  height: 80%;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #c0392b;
+  height: 60px;
+  justify-content: center;
+}
+h3 {
+  font-size: 36px;
+  padding: 0px 40px;
+}
+#subtext {
+  margin: 0;
+}
+h4 {
+  padding: 0px 40px;
+  font-size: 28px;
+  margin: 0px;
+}
+.action_button {
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 20px 10px;
+  background-color: #c0392b;
+  color: white;
+}
+#search_button {
+  padding: 9px;
+  vertical-align: top;
+  background-color: #c0392b;
+  border-radius: 0 4px 4px 0;
+}
+.button_text {
+  font-size: 16px;
+}
+#RI_info {
+  background-color: #f0eded;
+  padding: 20px 100px;
+  line-height: 2;
+}
+#RI_bottom {
+  background-color: #f0eded;
+  padding: 20px 50px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+p {
+  font-size: 18px;
+  text-align: left;
+  padding: 20px 40px;
+}
+.info_button {
+  background-color: #807d7d;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  color: white;
+}
+.all_buttons {
+  display: flex;
+  justify-content: center;
+}
+button {
+  border: none;
+}
+.employee_image {
+  width: 600px;
+  margin: 20px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#app_info {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  line-height: 1.3;
+  align-items: center;
+}
+.shipping_details {
+  background-color: #c0392b;
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+}
+.sub_heading {
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 250px;
+  padding: 12px;
+  font-size: 16px;
+}
+#tracking_image {
+  margin-bottom: 20px;
+  width: 100%;
+}
+#booking_no {
+  border: 0px solid lightgrey;
+  background-color: #f0eded;
+  border-radius: 5px 0 0 5px;
+  vertical-align: top;
+  font-size: 24px;
+  width: 100%;
+}
+#search_icon {
+  height: 22px;
+}
+#delivery_progress {
+  margin: 15px 40px;
+  display: none;
+}
+#booking_details {
+  font-weight: bolder;
+  margin: 10px 20px;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.your_booking {
+  font-weight: bolder;
+  color: grey;
+}
+#progress_bar {
+  width: 800px;
+  margin: 20px 40px;
+}
+.car_info {
+  border-bottom: 2px solid black;
+  font-size: 18px;
+  line-height: 1.5;
+  display: block;
+}
+.car_infos {
+  padding: 20px;
+
+}
+.boxes {
+  margin-bottom: 40px;
+  vertical-align: top;
+}
+#tracking_details {
+  padding: 15px;
+  padding-bottom: 0px;
+
+}
+#start, #current, #finish {
+  margin-bottom: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50%;
+}
+.location_title {
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+}
+.location {
+  padding: 18px;
+}
+#start > .location_title {
+  background-color: green;
+}
+#start > .location {
+  background-color: lightgreen;
+}
+#current > .location_title {
+  background-color: rgb(51, 83, 172);
+}
+#current > .location {
+  background-color: lightblue;
+}
+#finish > .location_title {
+  background-color: crimson;
+}
+#finish > .location {
+  background-color: pink;
+}
+
+
+.download_app {
+  width: 120px;
+  margin: 10px 20px 0px 0px;
+}
+#app {
+  vertical-align: middle;
+}
+#app_features {
+  width: 80%;
+  text-align: left;
+}
+.footer {
+  font-size: 16px;
+  line-height: normal;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+#footer_menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.social_media {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.footer > a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.footer_title {
+  margin-bottom: 10px;
+}
+#copyright {
+  font-size: 14px;
+}
+.footer_links {
+  margin-right: 70px;
+  padding-bottom: 50px;
+}
+
+/* delivery progress svg */
+circle.complete {
+  fill: black;
+}
+line.complete {
+  stroke-width: 2px;
+  stroke: black;
+}
+circle.incomplete {
+  fill: lightgray
+}
+line.incomplete {
+  stroke-width: 2px;
+  stroke: lightgray;
+  stroke-dasharray: 4;
+}
+
+#footer {
+  height: 130px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer_image {
+  height: 40px;
+}
+.footer_text {
+  padding-top: 5px;
+  font-size: 15px;
+}
+.footer_item {
+  text-align: center;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected_item {
+  background-color: #c0392b;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+}

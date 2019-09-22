@@ -1,0 +1,70 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/request_quote.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src='images/royal-logo.png' id='logo'>
+  </header>
+  <p id='text'>Please complete as much of the rate enquiry form as possible in order for our Royal Logistics team to provide an accurate freight quotations.</p>
+  <form id="my_form">
+    <div class='sub_heading'>My Details</div>
+      <p class='input_field_left'>First Name</p>
+      <input type='text' name='fname'>
+      <p class='input_field_right'>Last Name</p>
+      <input type='text' name='lname'>
+      <p class='input_field_left'>Email</p>
+      <input type='email' name="email">
+      <p class='input_field_left'>Phone Number</p>
+      <input type='text' name="phone">
+    <div class='sub_heading'>My Shipment</div>
+      <p class='input_field_left'>Car Make</p>
+      <input type='text' name="car_make">
+      <p class='input_field_right'>Car Model</p>
+      <input type='text' name="car_model">
+      <p class='input_field_left'>Year of Manufacture</p>
+      <input type='text' name="year_of_manufacture">
+    <div class='sub_heading'>Routing Details</div>
+      <p class='input_field_left'>Pickup City</p>
+      <input type='text' name="city">
+      <p class='input_field_left'>Pickup State</p>
+      <input type='text' name="state">
+      <p class='input_field_left'>Dropoff City</p>
+      <input type='text' name="city2">
+      <p class='input_field_left'>Dropoff State</p>
+      <input type='text' nae="state2">
+      <p class='input_field_right'>Pickup Date</p>
+      <input type='date' name="pickup_date">
+    </div>
+    <div id='button'>
+      <input type="submit" id="rate_enquiry" class='action_button button_text' value="Send Rate Enquiry">
+    </div>
+  </form>
+  <div id="thanks">
+    Thanks for submitting your information - we'll be in touch shortly with your requested quote.
+    Your booking number is <span id="booking"></span>.
+  </div>
+  <div id='footer'>
+    <div class='footer_item'>
+      <div class='footer_item_content'>
+        <img src='images/trackingicon.png' class='footer_image'>
+        <div class='footer_text'>TRACK</div>
+      </div>
+    </div>
+    <div class='footer_item selected_item'>
+      <div class='footer_item_content'>
+        <img src='images/requestquotewhite.png' class='footer_image'>
+        <div class='footer_text'>REQUEST</div>
+      </div>
+    </div>
+    <div class='footer_item'>
+      <div class='footer_item_content'>
+        <img src='images/contact.jpg' class='footer_image'>
+        <div class='footer_text'>CONTACT</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

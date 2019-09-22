@@ -1,0 +1,179 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  font-family: 'Lato', sans-serif;
+}
+#logo {
+  height: 80%;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #c0392b;
+  height: 60px;
+  justify-content: center;
+}
+#subtext {
+  margin: 0;
+}
+.button_text {
+  font-size: 16px;
+}
+.action_button {
+  padding: 20px 20px;
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+  background-color: #c0392b;
+  color: white;
+}
+#RI_info {
+  background-color: #f0eded;
+  padding: 20px 100px;
+  line-height: 2;
+}
+#RI_bottom {
+  background-color: #f0eded;
+  padding: 20px 50px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+}
+#text, #thanks {
+  font-size: 16px;
+  text-align: left;
+  padding: 0px 20px 0px 20px;
+  margin-bottom: 0px;
+}
+#thanks {
+  margin-bottom: 30px;
+}
+.info_button {
+  background-color: #807d7d;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  color: white;
+}
+.all_buttons {
+  display: flex;
+  justify-content: center;
+}
+input[type=submit] {
+  border: none;
+  width: 100%;
+  font-family: inherit;
+}
+.employee_image {
+  width: 600px;
+  margin: 20px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#app_info {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  line-height: 1.3;
+  align-items: center;
+}
+.sub_heading {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0px 10px 0px;
+}
+input {
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border: solid 1px lightgray;
+}
+.input_field_left {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+#right {
+  display: inline-block;
+  width: auto;
+  vertical-align: top;
+}
+.input_field_right {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.download_app {
+  width: 120px;
+  margin: 10px 20px 0px 0px;
+}
+#app {
+  vertical-align: middle;
+}
+#app_features {
+  width: 80%;
+  text-align: left;
+}
+#button {
+  display: flex;
+  justify-content: center;
+}
+#thanks {
+  display: none;
+}
+#booking {
+  font-weight: bold;
+}
+.social_media {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.footer > a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.footer_title {
+  margin-bottom: 10px;
+}
+#copyright {
+  font-size: 14px;
+}
+.footer_links {
+  margin-right: 70px;
+  padding-bottom: 50px;
+}
+#my_form {
+  margin: 0px 20px;
+}
+#footer {
+  height: 130px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer_image {
+  height: 40px;
+}
+.footer_text {
+  padding-top: 5px;
+  font-size: 15px;
+}
+.footer_item {
+  text-align: center;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected_item {
+  background-color: #c0392b;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+}
