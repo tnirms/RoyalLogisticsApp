@@ -134,8 +134,8 @@ input {
   height: 22px;
 }
 #delivery_progress {
-  margin: 15px 40px;
-  display: none;
+  width: 100%;
+  margin-bottom: 16px;
 }
 #booking_details {
   font-weight: bolder;
@@ -171,7 +171,7 @@ input {
 
 }
 #start, #current, #finish {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .location_title {
   padding: 8px;
@@ -180,6 +180,9 @@ input {
 }
 .location {
   padding: 18px;
+}
+.location_status {
+  display: flex;
 }
 #start > .location_title {
   background-color: green;
@@ -278,7 +281,7 @@ line.incomplete {
 }
 .footer_text {
   padding-top: 5px;
-  font-size: 9px;
+  font-size: 8px;
 }
 .footer_item {
   text-align: center;
@@ -289,6 +292,12 @@ line.incomplete {
   align-items: center;
   justify-content: center;
 }
+form {
+  margin: 0;
+}
+form input[type=submit] {
+  display: none
+} 
 .selected_item {
   background-color: #c0392b;
   border-radius: 50%;

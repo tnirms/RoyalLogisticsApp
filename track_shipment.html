@@ -8,9 +8,10 @@
     <header>
       <img src='images/royal-logo.png' id='logo'>
     </header>
-    <div>
+    <form>
       <input type='search' placeholder='Booking Number' id='booking_no'>
-    </div>
+      <input type="submit">
+    </form>
     <div id="search_result">
       <img src='images/map.png' id='tracking_image'>
       <div id="tracking_info">
@@ -40,7 +41,7 @@
         Order Status: <span class="your_booking" id='status'></span><br>
         Estimated Arrival: <span class="your_booking" id='eta'></span>
       </div>
-      <svg id="delivery_progress" width="800" height="100">
+      <svg id="delivery_progress" viewBox="0 0 800 100">
         <line x1="100" y1="70" x2="300" y2="70" class="incomplete" stage=2 />
         <line x1="300" y1="70" x2="500" y2="70" class="incomplete" stage=3 />
         <line x1="500" y1="70" x2="700" y2="70" class="incomplete" stage=4 />
@@ -48,10 +49,10 @@
         <circle cx="300" cy="70" r="10" class="incomplete" stage=2 />
         <circle cx="500" cy="70" r="10" class="incomplete" stage=3 />
         <circle cx="700" cy="70" r="10" class="incomplete" stage=4 />
-        <text x="100" y="20" text-anchor="middle" alignment-baseline="central">Order Accepted</text>
-        <text x="300" y="20" text-anchor="middle" alignment-baseline="central">Preparing Shipping</text>
-        <text x="500" y="20" text-anchor="middle" alignment-baseline="central">Out For Delivery</text>
-        <text x="700" y="20" text-anchor="middle" alignment-baseline="central">Delivered</text>
+        <text x="100" y="20" font-size="20" text-anchor="middle" alignment-baseline="central">Order Accepted</text>
+        <text x="300" y="20" font-size="20" text-anchor="middle" alignment-baseline="central">Preparing Shipping</text>
+        <text x="500" y="20" font-size="20" text-anchor="middle" alignment-baseline="central">Out For Delivery</text>
+        <text x="700" y="20" font-size="20" text-anchor="middle" alignment-baseline="central">Delivered</text>
       </svg>
       <div class='boxes'>
         <div class='shipping_details'>
