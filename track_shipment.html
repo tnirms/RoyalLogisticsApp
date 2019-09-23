@@ -9,7 +9,7 @@
       <img src='images/royal-logo.png' id='logo'>
     </header>
     <div>
-      <input type='text' placeholder='Booking Number' id='booking_no'>
+      <input type='search' placeholder='Booking Number' id='booking_no'>
     </div>
     <div id="search_result">
       <img src='images/map.png' id='tracking_image'>
@@ -52,10 +52,10 @@
         <text x="300" y="20" text-anchor="middle" alignment-baseline="central">Preparing Shipping</text>
         <text x="500" y="20" text-anchor="middle" alignment-baseline="central">Out For Delivery</text>
         <text x="700" y="20" text-anchor="middle" alignment-baseline="central">Delivered</text>
-      </svg><br>
+      </svg>
       <div class='boxes'>
         <div class='shipping_details'>
-          <span class='sub_heading'>Customer Details</span>
+          <div class='sub_heading'>Customer Details</div>
         </div>
         <div class='car_infos'>
           <div class='car_info'>Name: </div><br>
@@ -65,7 +65,7 @@
       </div>
       <div class='boxes'>
         <div class='shipping_details'>
-          <span class='sub_heading'>Car Details</span>
+          <div class='sub_heading'>Car Details</div>
         </div>
         <div class='car_infos'>
           <div class='car_info'>Car Make: </div><br>
@@ -75,24 +75,24 @@
       </div>
     </div>
     <div id='footer'>
-      <div class='footer_item selected_item'>
+      <a class='footer_item selected_item' href="track_shipment.html">
         <div class='footer_item_content'>
           <img src='images/trackingiconwhite.png' class='footer_image'>
           <div class='footer_text'>TRACK</div>
         </div>
-      </div>
-      <div class='footer_item'>
+      </a>
+      <a class='footer_item' href="request_quote.html">
         <div class='footer_item_content'>
           <img src='images/requestquote.png' class='footer_image'>
           <div class='footer_text'>REQUEST</div>
         </div>
-      </div>
-      <div class='footer_item'>
+      </a>
+      <a class='footer_item' href="contact.html">
         <div class='footer_item_content'>
           <img src='images/contact.jpg' class='footer_image'>
           <div class='footer_text'>CONTACT</div>
         </div>
-      </div>
+      </a>
     </div>
   </body>
 </html>

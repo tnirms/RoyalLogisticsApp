@@ -1,6 +1,10 @@
 body {
-  margin: 0px;
+  margin: 80px 0px 130px;
   padding: 0px;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 html {
   font-family: 'Lato', sans-serif;
@@ -12,8 +16,11 @@ header {
   display: flex;
   align-items: center;
   background-color: #c0392b;
-  height: 60px;
+  height: 80px;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .button_text {
   font-size: 16px;
@@ -126,6 +133,7 @@ input {
 }
 #map {
   margin-bottom: 20px;
+  padding: 0 20px 20px;
 }
 #map_image {
   width: 100%;
@@ -136,6 +144,9 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .footer_image {
   height: 40px;

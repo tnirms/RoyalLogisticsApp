@@ -1,6 +1,10 @@
 body {
-  margin: 0px;
+  margin: 80px 0px 130px;
   padding: 0px;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 html {
   font-family: 'Lato', sans-serif;
@@ -12,8 +16,11 @@ header {
   display: flex;
   align-items: center;
   background-color: #c0392b;
-  height: 60px;
+  height: 80px;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 h3 {
   font-size: 36px;
@@ -92,10 +99,10 @@ button {
 .shipping_details {
   background-color: #c0392b;
   width: 100%;
-  padding: 10px;
   display: inline-block;
 }
 .sub_heading {
+  margin: 10px;
   font-size: 18px;
   color: white;
   font-weight: bolder;
@@ -109,13 +116,11 @@ input {
   font-size: 16px;
 }
 #tracking_image {
-  margin-bottom: 20px;
   width: 100%;
 }
 #booking_no {
-  border: 0px solid lightgrey;
-  background-color: #f0eded;
-  border-radius: 5px 0 0 5px;
+  border: 1px solid lightgray;
+  background-color: white;
   vertical-align: top;
   font-size: 24px;
   width: 100%;
@@ -152,7 +157,7 @@ input {
 
 }
 .boxes {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   vertical-align: top;
 }
 #tracking_details {
@@ -162,9 +167,6 @@ input {
 }
 #start, #current, #finish {
   margin-bottom: 16px;
-  margin-left: 5px;
-  margin-right: 5px;
-  width: 50%;
 }
 .location_title {
   padding: 8px;
@@ -261,6 +263,9 @@ line.incomplete {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .footer_image {
   height: 40px;
