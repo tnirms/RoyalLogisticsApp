@@ -9,11 +9,11 @@
       <img src='images/royal-logo.png' id='logo'>
     </header>
     <form>
-      <input type='search' placeholder='Booking Number' id='booking_no'>
+      <input type='number' placeholder='Enter Booking Number' id='booking_no'>
       <input type="submit">
     </form>
     <div id="search_result">
-      <img src='images/map.png' id='tracking_image'>
+      <img src='images/map_none.png' id='tracking_image'>
       <div id="tracking_info">
         <div id="tracking_details">
           <div class='location_status' id="start">
@@ -59,9 +59,9 @@
           <div class='sub_heading'>Customer Details</div>
         </div>
         <div class='car_infos'>
-          <div class='car_info'>Name: </div><br>
-          <div class='car_info'>Phone: </div><br>
-          <div class='car_info'>Email: </div>
+          <span class='car_info'>Name: <span class="your_booking" id='name'></span></span><br>
+          <span class='car_info'>Phone: <span class="your_booking" id='phone'></span></span><br>
+          <span class='car_info'>Email: <span class="your_booking" id='email'></span></span>
         </div>
       </div>
       <div class='boxes'>
@@ -69,9 +69,9 @@
           <div class='sub_heading'>Car Details</div>
         </div>
         <div class='car_infos'>
-          <div class='car_info'>Car Make: </div><br>
-          <div class='car_info'>Model: </div><br>
-          <div class='car_info'>Year of Maufacture: </div>
+          <span class='car_info'>Car Make: <span class="your_booking" id='car_make'></span></span><br>
+          <span class='car_info'>Model: <span class="your_booking" id='car_model'></span></span><br>
+          <span class='car_info'>Year of Manufacture: <span class="your_booking" id='year_of_manufacture'></span></span>
         </div>
       </div>
     </div>
@@ -95,5 +95,89 @@
         </div>
       </a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      var getUrlParameter = function getUrlParameter(sParam) {
+          var sPageURL = window.location.search.substring(1),
+              sURLVariables = sPageURL.split('&'),
+              sParameterName,
+              i;
+
+          for (i = 0; i < sURLVariables.length; i++) {
+              sParameterName = sURLVariables[i].split('=');
+
+              if (sParameterName[0] === sParam) {
+                  return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+              }
+          }
+      };   
+      var API_KEY = "keylP7NNI"+"ewuT4wQQ";
+      function combine(state, city) {
+        result = ""
+        if (state) {
+          if (city) {
+            return city + ", " + state;
+          } else {
+            return state;
+          }
+        } else if (city) {
+          return city;
+        }
+        return "";
+      }
+      function loadBooking() {
+        var booking_no = $("#booking_no").val();
+        $.get("https://api.airtable.com/v0/app9okdzp1jI9HZ2q/Customer%20Records?api_key="+API_KEY+"&filterByFormula=%7BBooking%20Number%7D%20%3D%20"+booking_no, function(data) {
+          if (data.records.length == 0) {
+            alert("Booking number not found!")
+          } else {
+            $("#search_result").show()
+            var fields = data.records[0].fields;
+            $("#booking").text(fields["Booking Number"]);
+            $("#status").text(fields["Order Status"]);
+            $("#eta").text(fields["ETA"]);
+            $("#name").text(fields["First Name"] + " " + fields["Last Name"]);
+            $("#phone").text(fields["Phone"]);
+            $("#email").text(fields["Email"]);
+            $("#car_make").text(fields["Car Make"]);
+            $("#car_model").text(fields["Car Model"]);
+            $("#year_of_manufacture").text(fields["Year of Manufacture"]);
+            var stages = ["Order Accepted", "Processing Shipping", "Out For Delivery", "Delivered"];
+            var stage_index = stages.indexOf(fields["Order Status"]) + 1;
+            $("#delivery_progress [stage]").each(function(index, item) {
+              if ($(item).attr("stage") <= stage_index) {
+                $(item).removeClass("incomplete").addClass("complete");
+              }
+            })
+            var start_location = combine(fields["Start State"], fields["Start City"]);
+            var current_location = combine(fields["Current State"], fields["Current City"]);
+            var end_location = combine(fields["End State"], fields["End City"]);
+            $("#start .location").text(start_location);
+            $("#current .location").text(current_location);
+            $("#finish .location").text(end_location);
+            markers = [];
+            start_location = start_location.replace(", ", ",").replace(/ /g, '+')
+            end_location = end_location.replace(", ", ",").replace(/ /g, '+')
+            current_location = current_location.replace(", ", ",").replace(/ /g, '+')
+            markers.push("markers=color:green%7C"+start_location)
+            markers.push("markers=color:red%7C"+end_location)
+            if (current_location) {
+              markers.push("markers=anchor:center%7Cicon:https://tnirms.github.io/RoyalLogistics/images/car-icon.png%7C"+current_location);
+            }
+            var url = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyA4WDi2OJis6i0C_kRdYT3sCIMocJfl-3Q&size=600x400&" + markers.join("&");
+            console.log(url)
+            $("#tracking_image").attr("src", url)
+          }
+        })
+      }
+      if (getUrlParameter("booking_no")) {
+        $("#booking_no").val(getUrlParameter("booking_no"));
+        loadBooking();
+      } 
+      $("form").submit(function(event) {
+        event.preventDefault(); //prevent default action 
+        loadBooking();
+      })
+    </script>    
   </body>
 </html>

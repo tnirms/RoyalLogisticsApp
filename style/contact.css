@@ -2,8 +2,7 @@ body {
   margin: 50px 0px 95px;
   padding: 0px;
 }
-textarea, input.text, input[type="text"], input[type="button"], input[type="submit"], input[type="search"],
-.input-checkbox {
+textarea, input, .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
 }

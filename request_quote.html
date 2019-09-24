@@ -42,10 +42,6 @@
       <input type="submit" id="rate_enquiry" class='action_button button_text' value="Send Rate Enquiry">
     </div>
   </form>
-  <div id="thanks">
-    Thanks for submitting your information - we'll be in touch shortly with your requested quote.
-    Your booking number is <span id="booking"></span>.
-  </div>
   <div id='footer'>
     <a class='footer_item' href="track_shipment.html">
       <div class='footer_item_content'>
@@ -66,5 +62,50 @@
       </div>
     </a>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    var API_KEY = "keylP7NNI"+"ewuT4wQQ";
+    // $.get("https://api.airtable.com/v0/app9okdzp1jI9HZ2q/Customer%20Records?api_key=keylP7NNI"+"ewuT4wQQ"+"&filterByFormula=%7BBooking%20Number%7D%20%3D%2010001", function(data) {
+    //   console.log(data)
+    // })
+
+    $("#my_form").submit(function(event) {
+      event.preventDefault(); //prevent default action 
+      var form_data = {};
+      $(this).serializeArray().map(function(x){form_data[x.name] = x.value;}); //Encode form elements for submission
+      var booking_number = Math.floor(Math.random() * 9000000) + 1000000;
+
+      $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "https://api.airtable.com/v0/app9okdzp1jI9HZ2q/Customer%20Records?api_key="+API_KEY,
+        data: JSON.stringify({
+          "fields": {
+            "Booking Number": booking_number,
+            "First Name": form_data.fname,
+            "Last Name": form_data.lname,
+            "Email": form_data.email,
+            "Phone": form_data.phone,
+            "Order Status": "Order Not Processed",
+            "Requested Pickup Date": form_data.pickup_date,
+            "Start State": form_data.state,
+            "Start City": form_data.city,
+            "End State": form_data.state2,
+            "End City": form_data.city2,
+            "Car Make": form_data.car_make,
+            "Car Model": form_data.car_model,
+            "Year of Manufacture": form_data.year_of_manufacture
+          }
+        }),
+        success: function() {
+          alert("Thanks! We'll be in touch shortly with your quote. Booking Number: " + booking_number)
+          window.location.href = "track_shipment.html?booking_no="+booking_number;
+        },
+        error: function() {
+          alert("There was an error.")
+        },          
+      })
+    })        
+  </script>
 </body>
 </html>

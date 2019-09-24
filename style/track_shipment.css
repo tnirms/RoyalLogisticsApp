@@ -2,8 +2,7 @@ body {
   margin: 50px 0px 95px;
   padding: 0px;
 }
-textarea, input.text, input[type="text"], input[type="button"], input[type="submit"], input[type="search"],
-.input-checkbox {
+textarea, input, .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
 }
@@ -124,11 +123,14 @@ input {
   width: 100%;
 }
 #booking_no {
-  border: 2px solid lightgray;
+  border: none;
   background-color: white;
   vertical-align: top;
   font-size: 24px;
   width: 100%;
+}
+#booking_no::placeholder {
+  font-style: italic;
 }
 #search_icon {
   height: 22px;
@@ -179,7 +181,7 @@ input {
   color: white;
 }
 .location {
-  padding: 18px;
+  padding: 8px;
 }
 .location_status {
   display: flex;
