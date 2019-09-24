@@ -34,9 +34,9 @@
       <p class='input_field_left'>Dropoff City</p>
       <input type='text' name="city2">
       <p class='input_field_left'>Dropoff State</p>
-      <input type='text' nae="state2">
+      <input type='text' name="state2">
       <p class='input_field_right'>Pickup Date</p>
-      <input type='date' name="pickup_date">
+      <input type='date' name="pickup_date" id="pickup_date">
     </div>
     <div id='button'>
       <input type="submit" id="rate_enquiry" class='action_button button_text' value="Send Rate Enquiry">
@@ -68,6 +68,14 @@
     // $.get("https://api.airtable.com/v0/app9okdzp1jI9HZ2q/Customer%20Records?api_key=keylP7NNI"+"ewuT4wQQ"+"&filterByFormula=%7BBooking%20Number%7D%20%3D%2010001", function(data) {
     //   console.log(data)
     // })
+    Date.prototype.toDateInputValue = (function() {
+      var local = new Date(this);
+      local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+      return local.toJSON().slice(0,10);
+    });
+    $(document).ready( function() {
+        $('#pickup_date').val(new Date().toDateInputValue());
+    })
 
     $("#my_form").submit(function(event) {
       event.preventDefault(); //prevent default action 
